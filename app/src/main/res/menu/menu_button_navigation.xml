@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_action_home"
+        android:orderInCategory="0"/>
+<item android:id="@+id/zone"
+    android:title="Zone"
+    android:icon="@drawable/ic_action_zone"
+    android:orderInCategory="1"/>
+
+
+    <item android:id="@+id/percorsi"
+        android:title="Percorsi"
+        android:icon="@drawable/ic_action_percorsi"
+
+        android:orderInCategory="2"/>
+
+
+    <item android:id="@+id/carrelli"
+        android:title="Carrelli"
+        android:icon="@drawable/ic_action_carrelli"
+        android:orderInCategory="3"/>
+
+    <item android:id="@+id/notifiche"
+        android:title="Notifiche"
+        android:icon="@drawable/ic_action_notifiche"
+        android:orderInCategory="4"/>
+</menu>

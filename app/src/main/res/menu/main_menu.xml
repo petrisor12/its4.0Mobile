@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/item_percorsi"
+    android:title="Percorsi"
+
+
+
+    ></item>
+
+    <item android:id="@+id/item_Zone"
+        android:title="Zone"
+
+
+
+        ></item>
+    <item android:id="@+id/item_Carrelli"
+        android:title="Carrelli"
+
+
+
+        ></item>
+    <item android:id="@+id/item_Notifiche"
+        android:title="Notifiche"
+
+
+
+        ></item>
+
+    <item android:id="@+id/item_Logout"
+        android:title="Logout"
+
+
+
+        ></item>
+
+
+
+
+</menu>

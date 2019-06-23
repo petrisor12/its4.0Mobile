@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="1dp"
+    tools:context=".MainActivity"
+    android:background="@color/colorLight">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="INFORMAZIONI SUI PERCORSI"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <Button
+        android:id="@+id/btnRealTimePercorsi"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="Storico"
+        android:textSize="18dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:background="@color/colorLight"
+        />
+
+    <Button
+        android:id="@+id/btnStoricoPercorsi"
+
+        android:layout_height="match_parent"
+        android:text="Real Time"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="18dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:background="@color/colorLight"/>
+</LinearLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:id="@+id/containerPercorsi">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>
+
