@@ -34,9 +34,10 @@ public class Percorsi_Fragment extends Fragment {
         btnStorico=v.findViewById(R.id.btnStoricoPercorsi);
 
         FragmentTransaction vtF =getFragmentManager().beginTransaction();
-
+       // DATI_CORRENTI dati_correnti =new DATI_CORRENTI();
         Percorsi_Storico_Fragment percorsi_realTime_fragment=new Percorsi_Storico_Fragment();
         vtF.replace(R.id.containerPercorsi,percorsi_realTime_fragment);
+       // vtF.replace(R.id.containerPercorsi,dati_correnti);
         vtF.commit();
         btnRealTime.setTextColor(Color.DKGRAY);
         btnStorico.setTextColor(Color.WHITE);
@@ -48,8 +49,9 @@ public class Percorsi_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction vtF =getFragmentManager().beginTransaction();
-                Percorsi_Storico_Fragment percorsiRealTimeFragment =new Percorsi_Storico_Fragment();
-                vtF.replace(R.id.containerPercorsi,percorsiRealTimeFragment);
+                DATI_CORRENTI dati_correnti =new DATI_CORRENTI();
+
+                vtF.replace(R.id.containerPercorsi, dati_correnti);
                 vtF.commit();
                 btnStorico.setTextColor(Color.DKGRAY);
                 btnRealTime.setTextColor(Color.WHITE);
@@ -69,9 +71,10 @@ public class Percorsi_Fragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction vtF =getFragmentManager().beginTransaction();
                 Percorsi_Storico_Fragment percorsi_storico_fragment=new Percorsi_Storico_Fragment();
-
-                vtF.replace(R.id.containerPercorsi, percorsi_storico_fragment);
+                vtF.replace(R.id.containerPercorsi,percorsi_storico_fragment);
                 vtF.commit();
+
+
                 btnStorico.setTextColor(Color.WHITE);
                 btnRealTime.setTextColor(Color.DKGRAY);
                 btnRealTime.setBackgroundColor(Color.RED);

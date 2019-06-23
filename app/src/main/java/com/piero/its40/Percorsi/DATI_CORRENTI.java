@@ -57,11 +57,92 @@ adapter =new AdapterDATI_CORRENTI(new ArrayList<Carreli_Zone>());
 listView.setAdapter(adapter);
 
 
-//myAsync=new MyAsync();
-//myAsync.execute();
+myAsync=new MyAsync();
+myAsync.execute();
 
             return v;
     }
+
+
+    public class MyAsync extends AsyncTask<Object, Integer, Object> {
+
+      //  WeakReference<Activity_FiguraB> mActivity;
+
+      //  public MyAsync(Activity_FiguraB aActivity) {
+        //    this.mActivity = new WeakReference<>(aActivity);
+
+       // }
+        @Override
+        protected Object doInBackground(Object... strings) {
+            try {
+                getJsonObjectRequest("https://its40apiv1.azurewebsites.net/api/cart/o/12");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            try {
+                Thread.sleep(2000);
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object aVoid) {
+            super.onPostExecute(aVoid);
+            if(myAsync !=null){
+                myAsync.cancel(true);
+                myAsync=null;
+            }
+            adapter.aggiorna(arrayListCarrelli_Zone);
+
+            myAsync=new MyAsync();
+            myAsync.execute();
+
+        }
+        private void getJsonObjectRequest(String url){
+
+            final JsonObjectRequest mJsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        JSONArray mJsonArray = response.getJSONArray("list");
+                        Log.d("dati"," "+ mJsonArray.toString());
+                        arrayListCarrelli_Zone.clear();
+                        for (int i=0;i<mJsonArray.length();i++){
+                            JSONObject item=mJsonArray.getJSONObject(i);
+                            Carreli_Zone vCarZone = new Carreli_Zone();
+
+                            vCarZone.setNomeZona(ZoneNome.nomeZona(item.getInt("zoneId")));
+                            vCarZone.setIdCarrello(item.getInt("cartId"));
+
+                            vCarZone.setTime((item.getString("timeStamp").substring(11,19)));
+
+                            arrayListCarrelli_Zone.add(vCarZone);
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("main","errore");
+
+                }
+            });
+            Volley.newRequestQueue(getContext()).add(mJsonObjectRequest);
+        }
+
+
+    }
+
 
 
 

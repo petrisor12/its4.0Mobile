@@ -16,7 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.piero.its40.MainActivity;
+import com.piero.its40.Models.Carreli_Zone;
 import com.piero.its40.R;
+
+import java.util.ArrayList;
 
 public class Activity_Notifiche extends AppCompatActivity {
     TestService mService;
@@ -57,6 +60,8 @@ public class Activity_Notifiche extends AppCompatActivity {
                 btnAttiva.setTextColor(Color.GRAY);
                 btnDisaativa.setTextColor(Color.RED);
                 textView.setText("Notifiche attivate");
+
+
             }
         });
 
@@ -67,8 +72,8 @@ public class Activity_Notifiche extends AppCompatActivity {
                 btnAttiva.setTextColor(Color.RED);
                 btnDisaativa.setTextColor(Color.GRAY);
                 textView.setText("Notifiche disattivate");
-               // unbind();
                 getRandomFromServices();
+              //  unbind();
 
             }
         });
@@ -85,13 +90,18 @@ public class Activity_Notifiche extends AppCompatActivity {
 
     private void getRandomFromServices() {
         if(mService !=null){
-            int result=mService.getRandom();
-            Log.d("TAG","mservice ok");
-            Toast.makeText(getApplicationContext(),/* message*/  "tesg"+result, Toast.LENGTH_SHORT).show();
+         ArrayList<Carreli_Zone> arrayList =mService.getDati();
+          //  Log.d("TAG","mservice Ok" +arrayList.get(1)+"nnnhh");
+
+
+
+//            Log.d("TAG","mservice ok");
+//            int result=mService.getRandom();
+//            Toast.makeText(getApplicationContext(),/* message*/  "tesg"+result, Toast.LENGTH_SHORT).show();
 
         }else{
             Log.d("TAG","mservice null");
-        }
+    }
 
     }
 
