@@ -2,6 +2,7 @@ package com.piero.its40;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.piero.its40.Carrelli.Carrelli_Fragment;
 import com.piero.its40.Home.Home_Fragment;
+import com.piero.its40.Notifiche.Activity_Notifiche;
 import com.piero.its40.Notifiche.Notifiche_Fragment;
 import com.piero.its40.Percorsi.Percorsi_Fragment;
 import com.piero.its40.Zone.Zone_Fragment;
@@ -106,7 +108,9 @@ BottomNavigationView bottomNavigationView;
                 launchFragment("ITS 4.0 Percorsi", Percorsi_Fragment.newInstance());
                 return true;
             case R.id.notifiche:
-                launchFragment("ITS 4.0 Notifiche", Notifiche_Fragment.newInstance());
+               // launchFragment("ITS 4.0 Notifiche", Notifiche_Fragment.newInstance());
+                Intent vIntent=new Intent(getApplicationContext(), Activity_Notifiche.class);
+                startActivity(vIntent);
                 return true;
             case R.id.carrelli:
                 launchFragment("ITS 4.0 Carrelli", Carrelli_Fragment.newInstance());

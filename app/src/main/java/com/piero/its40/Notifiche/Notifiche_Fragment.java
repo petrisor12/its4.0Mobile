@@ -1,5 +1,6 @@
 package com.piero.its40.Notifiche;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,56 +29,11 @@ public class Notifiche_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v=inflater.inflate(R.layout.percorsi_layout,container,false);
-        btnRealTime=v.findViewById(R.id.btnRealTimePercorsi);
-        btnStorico=v.findViewById(R.id.btnStoricoPercorsi);
+      //  View v=inflater.inflate(R.layout.notifiche_layout,container,false);
+        Intent vIntent=new Intent(getContext(),Activity_Notifiche.class);
+        startActivity(vIntent);
 
-        FragmentTransaction vtF =getFragmentManager().beginTransaction();
-
-        Percorsi_Storico_Fragment percorsi_realTime_fragment=new Percorsi_Storico_Fragment();
-        vtF.replace(R.id.containerPercorsi,percorsi_realTime_fragment);
-        vtF.commit();
-        btnRealTime.setTextColor(Color.DKGRAY);
-        btnStorico.setTextColor(Color.WHITE);
-        btnRealTime.setBackgroundColor(Color.RED);
-        btnStorico.setBackgroundColor(Color.TRANSPARENT);
-
-        btnStorico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction vtF =getFragmentManager().beginTransaction();
-                Percorsi_Storico_Fragment percorsiRealTimeFragment =new Percorsi_Storico_Fragment();
-                vtF.replace(R.id.containerPercorsi,percorsiRealTimeFragment);
-                vtF.commit();
-                btnStorico.setTextColor(Color.DKGRAY);
-                btnRealTime.setTextColor(Color.WHITE);
-                btnStorico.setBackgroundColor(Color.RED);
-                btnRealTime.setBackgroundColor(Color.TRANSPARENT);
-
-
-
-            }
-        });
-        btnRealTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction vtF =getFragmentManager().beginTransaction();
-                Percorsi_Storico_Fragment percorsi_storico_fragment=new Percorsi_Storico_Fragment();
-
-                vtF.replace(R.id.containerPercorsi, percorsi_storico_fragment);
-                vtF.commit();
-                btnStorico.setTextColor(Color.WHITE);
-                btnRealTime.setTextColor(Color.DKGRAY);
-                btnRealTime.setBackgroundColor(Color.RED);
-                btnStorico.setBackgroundColor(Color.TRANSPARENT);
-
-
-
-            }
-        });
-
-
-        return v;
+        return null;
     }
 
 

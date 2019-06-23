@@ -1,6 +1,8 @@
 package com.piero.its40.Percorsi;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +44,7 @@ public class Percorsi_Fragment extends Fragment {
         btnStorico.setBackgroundColor(Color.TRANSPARENT);
 
         btnStorico.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 FragmentTransaction vtF =getFragmentManager().beginTransaction();
@@ -51,6 +54,10 @@ public class Percorsi_Fragment extends Fragment {
                 btnStorico.setTextColor(Color.DKGRAY);
                 btnRealTime.setTextColor(Color.WHITE);
                 btnStorico.setBackgroundColor(Color.RED);
+
+
+
+
                 btnRealTime.setBackgroundColor(Color.TRANSPARENT);
 
 
