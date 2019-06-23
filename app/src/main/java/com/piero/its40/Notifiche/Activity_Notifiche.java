@@ -42,7 +42,7 @@ public class Activity_Notifiche extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        bindService();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifiche);
         textView=findViewById(R.id.textViewNotifica);
@@ -55,8 +55,8 @@ public class Activity_Notifiche extends AppCompatActivity {
         btnAttiva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bindService();
 
+                getRandomFromServices();
                 btnAttiva.setTextColor(Color.GRAY);
                 btnDisaativa.setTextColor(Color.RED);
                 textView.setText("Notifiche attivate");
@@ -72,7 +72,7 @@ public class Activity_Notifiche extends AppCompatActivity {
                 btnAttiva.setTextColor(Color.RED);
                 btnDisaativa.setTextColor(Color.GRAY);
                 textView.setText("Notifiche disattivate");
-                getRandomFromServices();
+                stopGetRandomFromServices();
               //  unbind();
 
             }
@@ -82,15 +82,20 @@ public class Activity_Notifiche extends AppCompatActivity {
 
 
 
+
     private void bindService() {
         bindService(new Intent(Activity_Notifiche.this,TestService.class),mConnection, Context.BIND_AUTO_CREATE);
 
 
     }
+    private void stopGetRandomFromServices() {
+        if(mService !=null){
+            mService.noGetDati();}
+    }
 
     private void getRandomFromServices() {
         if(mService !=null){
-         ArrayList<Carreli_Zone> arrayList =mService.getDati();
+        mService.getDati();
           //  Log.d("TAG","mservice Ok" +arrayList.get(1)+"nnnhh");
 
 

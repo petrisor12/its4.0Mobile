@@ -19,11 +19,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/DATI_CORRENTI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/DATI_CORRENTI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
+            <state relative-caret-position="130">
+              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding>
                 <element signature="e#1454#1708#0" expanded="true" />
                 <element signature="e#1707#1708#0" expanded="true" />
@@ -58,13 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-              <folding>
-                <element signature="e#1228#2219#0" expanded="true" />
-                <element signature="e#2221#2399#0" expanded="true" />
-                <element signature="e#2398#2399#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1005">
+              <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -90,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/DATI_CORRENTI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="340">
+              <caret line="60" column="18" selection-start-line="59" selection-end-line="60" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -101,16 +93,16 @@
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+            <state relative-caret-position="100">
+              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -157,10 +149,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/home_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_notifiche.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/DATI_CORRENTI.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java" />
       </list>
     </option>
   </component>
@@ -202,6 +194,13 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="its40" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="its4.0Mobile" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="its40" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Notifiche" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="its4.0Mobile" type="1abcf292:AndroidViewProjectNode" />
@@ -402,7 +401,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Android Profiler" />
-      <window_info anchor="bottom" id="Debug" sideWeight="0.49928468" visible="true" weight="0.32939634" />
+      <window_info anchor="bottom" id="Debug" sideWeight="0.49928468" weight="0.32939634" />
       <window_info anchor="bottom" id="Terminal" weight="0.32939634" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5007153" side_tool="true" weight="0.32939634" />
       <window_info anchor="bottom" id="Build" sideWeight="0.49928468" weight="0.32939634" />
@@ -518,31 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
-          <folding>
-            <element signature="e#1454#1708#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#1368#1554#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#1228#2219#0" expanded="true" />
-            <element signature="e#2221#2399#0" expanded="true" />
-            <element signature="e#2398#2399#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Models/Carreli_Zone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -571,6 +545,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dati_correnti.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Storico_Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -580,23 +569,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/DATI_CORRENTI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="340">
+          <caret line="60" column="18" selection-start-line="59" selection-end-line="60" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dati_correnti.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/TestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="1005">
+          <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Percorsi/Percorsi_Fragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/piero/its40/Notifiche/Activity_Notifiche.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        <state relative-caret-position="130">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+          <folding>
+            <element signature="e#1454#1708#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1368#1554#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
