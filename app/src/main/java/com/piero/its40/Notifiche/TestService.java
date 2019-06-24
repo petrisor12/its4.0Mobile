@@ -2,6 +2,7 @@ package com.piero.its40.Notifiche;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -125,25 +127,17 @@ if(control){
                             vCarZone.setNomeZona(ZoneNome.nomeZona(item.getInt("zoneId")));
                             vCarZone.setIdCarrello(item.getInt("cartId"));
 
-                            vCarZone.setTime((item.getString("timeStamp").substring(11,19)));
+                           // vCarZone.setTime((item.getString("timeStamp").substring(11,19)));
+                            vCarZone.setTime(item.getString("timeStamp"));
 
                             arrayListCarrelliZone.add(vCarZone);
 
                         }
                         String lastResult="Nella zona "+arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getNomeZona()+" è passato "
-                                + " il carrello " +arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getIdCarrello()+ " ora " +
-                                arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getIdCarrello();
-                        Toast.makeText(getApplicationContext(),/* message*/  ""+lastResult, Toast.LENGTH_SHORT).show();
-                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
-                                .setSmallIcon(R.drawable.coop)
-                                .setContentTitle("COOP NOTIFICHE ")
-                                .setContentText(lastResult)
+                                + " il carrello " +arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getIdCarrello()+ " data corrente " +
+                                arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getTime();
+                        sendNotifiche(lastResult);
 
-                                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
-
-
-                        notificationManager.notify(arrayListCarrelliZone.get(1).getIdZona(), builder.build());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -178,7 +172,29 @@ if(control){
     }
 
 
+private void sendNotifiche(String lastResult){
+    Toast.makeText(getApplicationContext(),/* message*/  ""+lastResult, Toast.LENGTH_SHORT).show();
+    Intent intent = new Intent(getApplicationContext(), Activity_Notifiche.class);
+    intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+            .setSmallIcon(R.drawable.coop)
+            .setContentTitle("COOP NOTIFICHE ")
+            .setContentText(lastResult)
 
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true);
+    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
+
+    notificationManager.notify(arrayListCarrelliZone.get(1).getIdZona(), builder.build());
+    Intent vIntent = new Intent("DATA");
+    vIntent.putExtra("STR", lastResult);
+    LocalBroadcastManager.getInstance(this).sendBroadcast(vIntent);
+
+
+}
 
 
 }

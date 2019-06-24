@@ -1,10 +1,13 @@
 package com.piero.its40.Notifiche;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,6 +28,7 @@ public class Activity_Notifiche extends AppCompatActivity {
     TestService mService;
     Button btnDisaativa,btnAttiva;
     TextView textView;
+    MyBrodcast myBrodcast;
 
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -52,6 +56,7 @@ public class Activity_Notifiche extends AppCompatActivity {
         btnDisaativa.setTextColor(Color.GRAY);
         textView.setText("Notifiche disattivate");
 
+        myBrodcast=new MyBrodcast();
         btnAttiva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,4 +126,30 @@ public class Activity_Notifiche extends AppCompatActivity {
         startActivity(vIntent);
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        IntentFilter vFilter = new IntentFilter("DATO");
+        LocalBroadcastManager.getInstance(this).registerReceiver(myBrodcast, vFilter);
+        Log.d("ricevuto", "start");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(myBrodcast);
+        Log.d("ricevuto", "stop");
+    }
+    public class MyBrodcast extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String s = intent.getStringExtra("STR");
+            Log.d("ricevuto", "ricevuto"+s);
+         // Toast.makeText(getApplicationContext(),/* message*/  "ricevuto" +s, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
 }
