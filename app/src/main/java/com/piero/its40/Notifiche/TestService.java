@@ -1,12 +1,18 @@
 package com.piero.its40.Notifiche;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -16,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.piero.its40.Models.Carreli_Zone;
 import com.piero.its40.Models.ZoneNome;
 import com.piero.its40.Percorsi.DATI_CORRENTI;
+import com.piero.its40.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +32,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class TestService extends Service {
+
+    private static final String CHANNEL_ID ="RRR" ;
     MyBinder mBinder = new MyBinder();
     ArrayList<Carreli_Zone> arrayListCarrelliZone=new ArrayList<>();
     AsyncTask myAsync;
@@ -49,6 +58,7 @@ public class TestService extends Service {
         control=true;
         myAsync=new MyAsync();
         myAsync.execute();
+        createNotificationChannel();
 
     }
     public void  noGetDati() {
@@ -75,7 +85,7 @@ public class TestService extends Service {
                 e.printStackTrace();
             }
             try {
-                Thread.sleep(2000);
+                Thread.sleep(10000);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -120,11 +130,24 @@ if(control){
                             arrayListCarrelliZone.add(vCarZone);
 
                         }
-                        Toast.makeText(getApplicationContext(),/* message*/  "text"+arrayListCarrelliZone.toString(), Toast.LENGTH_SHORT).show();
+                        String lastResult="Nella zona "+arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getNomeZona()+" è passato "
+                                + " il carrello " +arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getIdCarrello()+ " ora " +
+                                arrayListCarrelliZone.get(arrayListCarrelliZone.size()-1).getIdCarrello();
+                        Toast.makeText(getApplicationContext(),/* message*/  ""+lastResult, Toast.LENGTH_SHORT).show();
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+                                .setSmallIcon(R.drawable.coop)
+                                .setContentTitle("COOP NOTIFICHE ")
+                                .setContentText(lastResult)
 
+                                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
+
+                        notificationManager.notify(arrayListCarrelliZone.get(1).getIdZona(), builder.build());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
 
 
                 }
@@ -141,13 +164,21 @@ if(control){
 
 
     }
+    private void createNotificationChannel() {
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-    public int getRandom(){
-        Random vRandom=new Random();
-        return vRandom.nextInt();
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "name", importance);
+            channel.setDescription("descrizione");
 
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
+
+
+
 
 
 }
